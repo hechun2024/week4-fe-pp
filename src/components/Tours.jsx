@@ -10,20 +10,6 @@ const Tours = () => {
     setToursData((prev) => prev.filter((tour) => tour.id !== id));
   };
 
-  const refreshTours = () => setToursData(tours);
-
-  if (toursData.length === 0) {
-    return (
-      <section className="section" id="tours">
-        <Title title="featured" subTitle="tours" />
-        <div className="section-center featured-center">
-          <p>no tours left</p>
-          <button className="btn" onClick={refreshTours}>refresh</button>
-        </div>
-      </section>
-    );
-  }
-
   return (
     <section className="section" id="tours">
       <Title title="featured" subTitle="tours" />

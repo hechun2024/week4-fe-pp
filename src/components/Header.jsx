@@ -1,9 +1,9 @@
-import Navbar from './Navbar';
-import logo from '../assets/images/logo.svg'
+import Navbar from "./Navbar";
+import logo from "../assets/images/logo.svg";
 
 function Header() {
   return (
-    <header>
+    <header className="header">
       <div className="nav-center">
         <div className="nav-header">
           <img src={logo} className="nav-logo" alt="backroads" />

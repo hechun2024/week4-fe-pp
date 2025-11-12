@@ -1,24 +1,50 @@
 import React from "react";
 
-const Tour = ({ id, image, info, price, name, removeTour }) => {
+const Tour = ({
+  id,
+  image,
+  date,
+  title,
+  info,
+  location,
+  duration,
+  cost,
+  difficulty,
+  rating,
+  removeTour,
+}) => {
   return (
-    <article className="tour">
-      <img src={image} alt={name} />
-      <footer>
-        <div className="tour-info">
-          <h4>{name}</h4>
-          <h4 className="tour-price">${price}</h4>
+    <div>
+      <button className="delete-btn" onClick={() => removeTour(id)}>
+        Hide
+      </button>
+
+      <article className="tour-card">
+        <div className="tour-img-container">
+          <img src={image} className="tour-img" alt={title} />
+          <p className="tour-date">{date}</p>
+          <p className="tour-difficulty">{difficulty}</p>
         </div>
-        <p>{info}</p>
-        {removeTour && (
-          <button className="btn remove-btn" onClick={() => removeTour(id)}>
-            not interested
-          </button>
-        )}
-      </footer>
-    </article>
+        <div className="tour-info">
+          <div className="tour-title">
+            <h4>{title}</h4>
+            <p className="tour-rating">⭐ {rating}</p>
+          </div>
+          <p>{info}</p>
+          <div className="tour-footer">
+            <p>
+              <span>
+                <i className="fas fa-map" />
+              </span>
+              {location}
+            </p>
+            <p>from {cost}</p>
+            <p>{duration} days</p>
+          </div>
+        </div>
+      </article>
+    </div>
   );
 };
 
 export default Tour;
-
