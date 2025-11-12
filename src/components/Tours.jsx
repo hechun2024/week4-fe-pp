@@ -7,15 +7,29 @@ const Tours = () => {
   const [toursData, setToursData] = useState(tours);
 
   const removeTour = (id) => {
-    const newTours = toursData.filter((tour) => tour.id !== id);
-    setToursData(newTours);
+    setToursData((prev) => prev.filter((tour) => tour.id !== id));
   };
+
+  const refreshTours = () => setToursData(tours);
+
+  if (toursData.length === 0) {
+    return (
+      <section className="section" id="tours">
+        <Title title="featured" subTitle="tours" />
+        <div className="section-center featured-center">
+          <p>no tours left</p>
+          <button className="btn" onClick={refreshTours}>refresh</button>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section className="section" id="tours">
       <Title title="featured" subTitle="tours" />
 
       <div className="section-center featured-center">
-        {tours.map((tour) => {
+        {toursData.map((tour) => {
           return <Tour key={tour.id} {...tour} removeTour={removeTour} />;
         })}
       </div>
