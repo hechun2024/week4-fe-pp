@@ -1,3 +1,4 @@
+// ...existing code...
 import { Link } from "react-router-dom";
 
 function Navigation() {
@@ -11,7 +12,13 @@ function Navigation() {
           <Link to="/about">About</Link>
         </li>
         <li>
-          <Link to="/contact">Contact</Link>
+          <Link to="/services">Services</Link>
+        </li>
+        <li>
+          <Link to="/tours">Tours</Link>
+        </li>
+        <li>
+          <Link to="/register">Register</Link>
         </li>
       </ul>
     </nav>
@@ -19,3 +26,4 @@ function Navigation() {
 }
 
 export default Navigation;
+// ...existing code...
